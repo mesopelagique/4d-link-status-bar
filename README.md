@@ -4,3 +4,7 @@
 
 ![](AppScreenshot.png)
 
+## TODO
+
+- [ ] build has true `.app`
+- [ ] with login item to start with macOS
