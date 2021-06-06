@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 1
       - name: 🏗 swiftbuild
         run: |
-          swift build -c debug
+          swift build -c release
       - name: 📦 Build archive
         run: |
           REPOSITORY_NAME=$(jq --raw-output '.repository.name' $GITHUB_EVENT_PATH)
