@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "4d-recent-status-bar",
+    name: "4d-link-status-bar",
     platforms: [.macOS(.v10_15)],
     products: [
         .executable(
-            name: "4d-recent-bar",
+            name: "4d-link-status-bar",
             targets: ["Executable"]
         )
     ],
