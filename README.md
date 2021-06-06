@@ -11,6 +11,7 @@
 
 - [ ] build has true `.app`
 - [ ] with login item to start with macOS
+- [ ] change status bar icon
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
