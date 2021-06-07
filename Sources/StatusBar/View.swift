@@ -48,7 +48,7 @@ public final class View {
     }
 
     private func menuItem(for url: URL) -> NSMenuItem {
-        MenuItem(title: url.lastPathComponent, action: { [weak self] in
+        MenuItem(title: url.deletingPathExtension().lastPathComponent, action: { [weak self] in
             self?.viewStore.send(.openURL(url: url))
         })
     }
