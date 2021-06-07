@@ -34,7 +34,14 @@ public final class View {
                 let subMenuItem = MenuItem(title: version, action: {})
                 let subMenu = NSMenu()
                 subMenuItem.submenu = subMenu
-                subMenu.items.append(contentsOf: urls.map(menuItem(for:)))
+                let dico: [URL: [URL]] = Dictionary(grouping: urls) { $0.deletingLastPathComponent() }
+                for (parent, urlDicos) in dico {
+                    let parentItem = NSMenuItem(title: parent.lastPathComponent, action: nil, keyEquivalent: "")
+                    parentItem.isEnabled = false
+                    subMenu.items.append(parentItem)
+                    subMenu.items.append(contentsOf: urlDicos.map(menuItem(for:)))
+                    subMenu.items.append(.separator())
+                }
                 menu.items.append(subMenuItem)
             }
             menu.items.append(.separator())
