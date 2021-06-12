@@ -18,11 +18,12 @@ jobs:
       - name: 📦 Build archive
         run: |
           REPOSITORY_NAME=$(jq --raw-output '.repository.name' $GITHUB_EVENT_PATH)
-          zip -j -r $REPOSITORY_NAME.zip .build/apple/Products/Release/$REPOSITORY_NAME
+          .build/apple/Products/Release/$REPOSITORY_NAME appify
+          zip -j -r $REPOSITORY_NAME.app.zip .build/apple/Products/Release/$REPOSITORY_NAME.app
       - name: ⬆️ Upload to Release
         run: |
           REPOSITORY_NAME=$(jq --raw-output '.repository.name' $GITHUB_EVENT_PATH)
-          ARTIFACT=./$REPOSITORY_NAME.zip
+          ARTIFACT=./$REPOSITORY_NAME.app.zip
           AUTH_HEADER="Authorization: token $GITHUB_TOKEN"
           CONTENT_LENGTH_HEADER="Content-Length: $(stat -f%z "$ARTIFACT")"
           CONTENT_TYPE_HEADER="Content-Type: application/zip"
