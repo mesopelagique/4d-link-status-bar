@@ -3,15 +3,13 @@
 [![release](https://github.com/mesopelagique/4d-link-status-bar/actions/workflows/release.yml/badge.svg)](https://github.com/mesopelagique/4d-link-status-bar/actions/workflows/release.yml)
 [![release][release-shield]][release-url]
 
- Status menu bar to open `4DLink` in Favorites vXX folders
+ Status menu bar to open `4DLink` from Favorites vXX folders
 
 ![](AppScreenshot.png)
 
-## TODO
+## Start at login?
 
-- [ ] build has true `.app`
-- [ ] with login item to start with macOS
-- [ ] change status bar icon
+Go to system preferences, `User & Groups`, select your user and the `Login Items` tab. Add here the app with `+`
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
