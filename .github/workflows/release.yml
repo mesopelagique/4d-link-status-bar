@@ -15,15 +15,19 @@ jobs:
       - name: 🏗 swiftbuild
         run: |
           swift build -c release --arch arm64 --arch x86_64
+          export BUILD_DIR=.build/apple/Products/Release/
       - name: 📦 Build archive
         run: |
+          cd $BUILD_DIR
           REPOSITORY_NAME=$(jq --raw-output '.repository.name' $GITHUB_EVENT_PATH)
-          .build/apple/Products/Release/$REPOSITORY_NAME appify
-          zip -j -r $REPOSITORY_NAME.app.zip .build/apple/Products/Release/$REPOSITORY_NAME.app
+          ./$REPOSITORY_NAME appify
+          export ARCHIVE_NAME=$REPOSITORY_NAME.app.zip
+          zip -r $ARCHIVE_NAME $REPOSITORY_NAME.app
       - name: ⬆️ Upload to Release
         run: |
+          cd $BUILD_DIR
           REPOSITORY_NAME=$(jq --raw-output '.repository.name' $GITHUB_EVENT_PATH)
-          ARTIFACT=./$REPOSITORY_NAME.app.zip
+          ARTIFACT=./$ARCHIVE_NAME
           AUTH_HEADER="Authorization: token $GITHUB_TOKEN"
           CONTENT_LENGTH_HEADER="Content-Length: $(stat -f%z "$ARTIFACT")"
           CONTENT_TYPE_HEADER="Content-Type: application/zip"
