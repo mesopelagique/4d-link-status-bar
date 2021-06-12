@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "4d-link-status-bar",
-    platforms: [.macOS(.v10_15)],
+    platforms: [.macOS(.v11)],
     products: [
         .executable(
             name: "4d-link-status-bar",
@@ -11,15 +11,16 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(
-            url: "https://github.com/pointfreeco/swift-composable-architecture.git",
-            from: "0.3.0"
-        )
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", from: "0.3.0"),
+        .package(url: "https://github.com/phimage/Appify.git", from: "0.0.1")
     ],
     targets: [
         .target(
             name: "Executable",
-            dependencies: ["App", "QuatreD"]
+            dependencies: ["App", "QuatreD", "Appify"],
+            resources: [
+                .process("4D-structure.png")
+            ]
         ),
         .target(
             name: "App",
@@ -40,9 +41,6 @@ let package = Package(
                     name: "ComposableArchitecture",
                     package: "swift-composable-architecture"
                 )
-            ],
-            resources: [
-                .copy("Resources/")
             ]
         ),
         .target(
@@ -53,6 +51,6 @@ let package = Package(
                     package: "swift-composable-architecture"
                 )
             ]
-        ),
+        )
     ]
 )

@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Appify",
+        "repositoryURL": "https://github.com/phimage/Appify.git",
+        "state": {
+          "branch": null,
+          "revision": "ad09527be0c99e33f1ce2896a536a13babe36f85",
+          "version": "0.0.1"
+        }
+      },
+      {
         "package": "swift-case-paths",
         "repositoryURL": "https://github.com/pointfreeco/swift-case-paths",
         "state": {

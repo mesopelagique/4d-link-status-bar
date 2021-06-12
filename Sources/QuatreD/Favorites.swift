@@ -20,7 +20,6 @@ public struct Favorites {
             for url in folders.filter ({ $0.lastPathComponent.starts(with: favoritePrefix)}) {
                 let version = url.lastPathComponent.replacingOccurrences(of: favoritePrefix, with: "") // XXX clean only first or do substring
                 urls[version] = []
-                // XXX maybe submenu local and remote
                 if let files = try? FileManager.default.contentsOfDirectory(at: url.appendingPathComponent("Local"), includingPropertiesForKeys: [.isRegularFileKey], options: []) {
                     urls[version]?.append(contentsOf: files.filter { $0.pathExtension == pathExtension }.sorted(by: { $0.contentModificationDate > $1.contentModificationDate}))
                 }

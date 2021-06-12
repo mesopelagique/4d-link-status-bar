@@ -4,8 +4,9 @@ import StatusBar
 
 public final class View: NSObject, NSApplicationDelegate {
 
-    public init(store: Store<State, Action>) {
+    public init(store: Store<State, Action>, imageURL: URL?) {
         self.store = store
+        self.imageURL = imageURL
         super.init()
     }
 
@@ -15,11 +16,12 @@ public final class View: NSObject, NSApplicationDelegate {
         statusBarView = .init(store: store.scope(
             state: \.statusBar,
             action: Action.statusBar
-        ))
+        ), imageURL: imageURL)
 
         ViewStore(store).send(.fetchURLs)
     }
 
     private let store: Store<State, Action>
+    private let imageURL: URL?
 
 }

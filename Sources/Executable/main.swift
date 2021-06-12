@@ -3,6 +3,9 @@ import Cocoa
 import ComposableArchitecture
 import Combine
 import QuatreD
+import Appify
+
+Appify.run()
 
 let app: NSApplication = .shared
 let appView: View = .init(store: .init(
@@ -14,7 +17,7 @@ let appView: View = .init(store: .init(
         appTerminator: app.terminate(_:),
         mainQueue: AnyScheduler(DispatchQueue.main)
     )
-))
+), imageURL: Bundle.module.url(forResource: "4D-structure", withExtension: "png"))
 
 app.delegate = appView
 app.run()
