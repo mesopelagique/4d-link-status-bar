@@ -23,6 +23,12 @@ then put your `4DLink` files into one of possible subfolder `Local` or `Remote`
 
 ![](AppCustomScreenshot.png)
 
+## ⚠️ “4d-link-status-bar.app” cannot be opened because the developer cannot be verified.
+
+If you download the app in github release, the app is not signed. 
+
+To open the first time you must right click on the app file then do `Open`, and `Open` again.
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [release-shield]: https://img.shields.io/github/v/release/mesopelagique/4d-link-status-bar
