@@ -13,6 +13,15 @@ ie. reproduce the [Open Recent Databases menu](https://doc.4d.com/4Dv18R6/4D/18-
 
 Go to system preferences, `User & Groups`, select your user and the `Login Items` tab. Add here the app with `+`
 
+## Custom bookmarks
+
+If you want to keep forever some projects, and not use 4D recents one, create a folder `Favorites XXX` in `$HOME/Library/Application Support/4D`.
+
+For instance `Favorites 📌` or `Favorites Bookmarks`.
+
+then put your `4DLink` files into one of possible subfolder `Local` or `Remote`
+
+![](AppCustomScreenshot.png)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
