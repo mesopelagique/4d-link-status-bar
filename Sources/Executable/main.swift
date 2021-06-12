@@ -19,5 +19,6 @@ let appView: View = .init(store: .init(
     )
 ), imageURL: Bundle.module.url(forResource: "4D-structure", withExtension: "png"))
 
+NSApp.setActivationPolicy(.accessory)
 app.delegate = appView
 app.run()
