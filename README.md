@@ -3,11 +3,11 @@
 [![release](https://github.com/mesopelagique/4d-link-status-bar/actions/workflows/release.yml/badge.svg)](https://github.com/mesopelagique/4d-link-status-bar/actions/workflows/release.yml)
 [![release][release-shield]][release-url]
 
- Status menu bar to open `4DLink` from Favorites vXX folders
+ Status menu bar to open `4DLink` from Favorites vXX folders: Local + Remote
 
 ![](AppScreenshot.png)
 
-ie. reproduce the [Open Recent Databases menu](https://doc.4d.com/4Dv18R6/4D/18-R6/Connecting-to-a-4D-Server-Database.300-5360760.en.html) of 4D but for all versions and without an already opening 4D app
+ie. reproduce the [Open Recent Databases menu](https://doc.4d.com/4Dv18R6/4D/18-R6/Connecting-to-a-4D-Server-Database.300-5360760.en.html) of 4D but for all versions and without an already opened 4D app
 
 ## Start at login?
 
