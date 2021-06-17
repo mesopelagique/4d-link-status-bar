@@ -47,9 +47,35 @@ public final class View {
             }
             menu.items.append(.separator())
         }
+        
+        let docMenuItem = MenuItem(title: "Links...", action: {})
+        let subMenu = NSMenu()
+        docMenuItem.submenu = subMenu
+        subMenu.items.append(MenuItem(title: "Doc", action: { [weak self] in
+            self?.viewStore.send(.openURL(url: URL(string: "https://developer.4d.com/")!))
+        }))
+        subMenu.items.append(MenuItem(title: "Blog", action: { [weak self] in
+            self?.viewStore.send(.openURL(url: URL(string: "https://blog.4d.com/")!))
+        }))
+        subMenu.items.append(MenuItem(title: "Discuss", action: { [weak self] in
+            self?.viewStore.send(.openURL(url: URL(string: "https://discuss.4d.com/")!))
+        }))
+        subMenu.items.append(MenuItem(title: "Get Support", action: { [weak self] in
+            self?.viewStore.send(.openURL(url: URL(string: "https://taow.4d.com/")!))
+        }))
+        subMenu.items.append(MenuItem(title: "Download", action: { [weak self] in
+            self?.viewStore.send(.openURL(url: URL(string: "https://us.4d.com/product-download/")!))
+        }))
+  
+        menu.items.append(docMenuItem)
+        menu.items.append(.separator())
         menu.items.append(MenuItem(title: "Refresh", action: { [weak self] in
             self?.viewStore.send(.refresh)
         }))
+        /*menu.items.append(MenuItem(title: "Settings", action: { [weak self] in
+            self?.viewStore.send(.settings)
+        }))*/
+        menu.items.append(.separator())
         menu.items.append(MenuItem(title: "Quit", action: { [weak self] in
             self?.viewStore.send(.quit)
         }))

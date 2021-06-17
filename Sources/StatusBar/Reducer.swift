@@ -9,6 +9,8 @@ public let reducer = Reducer { state, action, env in
         return .fireAndForget { [state] in
             env.urlOpener(url)
         }
+    case .settings:
+        return .none
     case .refresh:
         return .none
     case .quit:
