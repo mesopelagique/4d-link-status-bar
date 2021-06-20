@@ -103,7 +103,7 @@ public final class View {
                 self?.viewStore.send(.bash(args: ["-c", "/usr/local/bin/kaluza install -g"]))
             }))
             
-            let install4DPopList = ["4DPop", "4DPop-Macros", "4DPop-Window", "4DPop-XLIFF-Pro", "4DPop-Git", "4DPop-ColorChart", "4DPop-Image-Buddy"]
+            let install4DPopList = ["4DPop", "4DPop-Macros", "4DPop-XLIFF-Pro", "4DPop-Git", "4DPop-ColorChart", "4DPop-Image-Buddy"]
             kaluzaMenuItemMenu.items.append(MenuItem(title: "Install 4dpop", toolTip: install4DPopList.joined(separator: "\n"), action: { [weak self] in
                 for install4DPop in install4DPopList {
                     self?.viewStore.send(.bash(args: ["-c", "/usr/local/bin/kaluza install -g vdelachaux/\(install4DPop)"]))
