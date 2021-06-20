@@ -2,10 +2,11 @@ import Cocoa
 
 final class MenuItem: NSMenuItem {
 
-    init(title: String, action: @escaping () -> Void) {
+    init(title: String, toolTip: String? = nil, action: @escaping () -> Void) {
         self.actionClosure = action
         super.init(title: title, action: #selector(menuItemAction), keyEquivalent: "")
         target = self
+        self.toolTip = toolTip
     }
 
     init(title: String, subitems: [NSMenuItem]) {

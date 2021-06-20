@@ -9,6 +9,14 @@ public let reducer = Reducer { state, action, env in
         return .fireAndForget { [state] in
             env.urlOpener(url)
         }
+    case .remoteBash(let cmd, let admin):
+        return .fireAndForget { [state] in
+            env.remoteBash(cmd, admin)
+        }
+    case .bash(let cmd):
+        return .fireAndForget { [state] in
+            env.bash(cmd)
+        }
     case .settings:
         return .none
     case .refresh:

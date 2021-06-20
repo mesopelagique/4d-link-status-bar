@@ -17,7 +17,7 @@ let package = Package(
     targets: [
         .target(
             name: "Executable",
-            dependencies: ["App", "QuatreD", "Appify"],
+            dependencies: ["App", "QuatreD", "Appify", "Bash"],
             resources: [
                 .process("4D-structure.png")
             ]
@@ -37,6 +37,7 @@ let package = Package(
             name: "StatusBar",
             dependencies: [
                 "QuatreD",
+                "Bash",
                 .product(
                     name: "ComposableArchitecture",
                     package: "swift-composable-architecture"
@@ -51,6 +52,9 @@ let package = Package(
                     package: "swift-composable-architecture"
                 )
             ]
+        ),
+        .target(
+            name: "Bash"
         )
     ]
 )
